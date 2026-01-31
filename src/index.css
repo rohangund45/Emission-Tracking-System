@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap');
+
+/* Next Gen Emission Control System - Eco-Friendly Design System */
+
+@layer base {
+  :root {
+    /* Core eco-friendly palette */
+    --background: 150 20% 98%;
+    --foreground: 160 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 30% 10%;
+
+    /* Primary - Deep forest green */
+    --primary: 155 60% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft sage */
+    --secondary: 145 25% 92%;
+    --secondary-foreground: 155 60% 25%;
+
+    /* Muted - Subtle green-gray */
+    --muted: 150 15% 95%;
+    --muted-foreground: 150 10% 45%;
+
+    /* Accent - Vibrant teal */
+    --accent: 172 66% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Eco colors */
+    --eco-emerald: 160 84% 39%;
+    --eco-teal: 172 66% 50%;
+    --eco-leaf: 142 76% 36%;
+    --eco-forest: 155 60% 32%;
+    --eco-sage: 145 30% 85%;
+    --eco-mint: 160 50% 94%;
+
+    /* Chart colors */
+    --chart-green: 142 76% 36%;
+    --chart-teal: 172 66% 50%;
+    --chart-blue: 201 96% 32%;
+    --chart-amber: 45 93% 47%;
+    --chart-red: 0 84% 60%;
+
+    /* Gradients */
+    --gradient-eco: linear-gradient(135deg, hsl(155 60% 32%) 0%, hsl(172 66% 45%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(155 60% 25%) 0%, hsl(160 84% 30%) 50%, hsl(172 66% 40%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(150 20% 98%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.03);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.03);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.03);
+    --shadow-glow: 0 0 40px -10px hsl(155 60% 45% / 0.3);
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 20% 90%;
+    --input: 150 20% 90%;
+    --ring: 155 60% 32%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 155 25% 97%;
+    --sidebar-foreground: 160 30% 15%;
+    --sidebar-primary: 155 60% 32%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 25% 94%;
+    --sidebar-accent-foreground: 155 60% 25%;
+    --sidebar-border: 150 20% 90%;
+    --sidebar-ring: 155 60% 32%;
+  }
+
+  .dark {
+    --background: 160 30% 6%;
+    --foreground: 150 20% 95%;
+
+    --card: 160 25% 10%;
+    --card-foreground: 150 20% 95%;
+
+    --popover: 160 25% 10%;
+    --popover-foreground: 150 20% 95%;
+
+    --primary: 155 60% 45%;
+    --primary-foreground: 160 30% 6%;
+
+    --secondary: 155 20% 18%;
+    --secondary-foreground: 150 20% 90%;
+
+    --muted: 155 15% 15%;
+    --muted-foreground: 150 15% 60%;
+
+    --accent: 172 66% 50%;
+    --accent-foreground: 160 30% 6%;
+
+    --eco-emerald: 160 84% 45%;
+    --eco-teal: 172 66% 55%;
+    --eco-leaf: 142 76% 42%;
+    --eco-forest: 155 60% 40%;
+    --eco-sage: 145 20% 25%;
+    --eco-mint: 160 30% 15%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 155 20% 18%;
+    --input: 155 20% 18%;
+    --ring: 155 60% 45%;
+
+    --sidebar-background: 160 25% 8%;
+    --sidebar-foreground: 150 20% 90%;
+    --sidebar-primary: 155 60% 45%;
+    --sidebar-primary-foreground: 160 30% 6%;
+    --sidebar-accent: 155 20% 15%;
+    --sidebar-accent-foreground: 150 20% 90%;
+    --sidebar-border: 155 20% 18%;
+    --sidebar-ring: 155 60% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl border border-white/50 shadow-lg;
+  }
+
+  .eco-gradient {
+    background: var(--gradient-eco);
+  }
+
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .stat-card {
+    @apply relative overflow-hidden rounded-xl bg-card border border-border/50 p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .stat-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300;
+  }
+
+  .stat-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .dashboard-section {
+    @apply rounded-2xl bg-card border border-border/50 p-6 shadow-sm;
+  }
+
+  .input-eco {
+    @apply rounded-lg border-2 border-border bg-background px-4 py-3 text-foreground transition-all duration-200 placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none;
+  }
+
+  .btn-eco {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground transition-all duration-200 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98];
+  }
+
+  .btn-eco-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-primary bg-transparent px-6 py-3 font-medium text-primary transition-all duration-200 hover:bg-primary hover:text-primary-foreground active:scale-[0.98];
+  }
+
+  .nav-link {
+    @apply flex items-center gap-3 rounded-lg px-4 py-3 text-muted-foreground transition-all duration-200 hover:bg-secondary hover:text-secondary-foreground;
+  }
+
+  .nav-link-active {
+    @apply flex items-center gap-3 rounded-lg bg-primary/10 px-4 py-3 font-medium text-primary;
+  }
+
+  .chart-container {
+    @apply rounded-xl bg-card border border-border/50 p-6;
+  }
+
+  .table-eco {
+    @apply w-full border-collapse;
+  }
+
+  .table-eco th {
+    @apply border-b border-border bg-secondary/50 px-4 py-3 text-left text-sm font-semibold text-foreground;
+  }
+
+  .table-eco td {
+    @apply border-b border-border/50 px-4 py-3 text-sm text-foreground;
+  }
+
+  .table-eco tr:hover td {
+    @apply bg-muted/30;
+  }
+
+  .badge-success {
+    @apply inline-flex items-center rounded-full bg-eco-leaf/15 px-3 py-1 text-xs font-medium text-eco-leaf;
+  }
+
+  .badge-warning {
+    @apply inline-flex items-center rounded-full bg-amber-500/15 px-3 py-1 text-xs font-medium text-amber-600;
+  }
+
+  .badge-danger {
+    @apply inline-flex items-center rounded-full bg-destructive/15 px-3 py-1 text-xs font-medium text-destructive;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+}

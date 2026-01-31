@@ -1,0 +1,4 @@
+project_id = "bchanemzqqqosaxidtly"
+
+[functions.predict-emissions]
+verify_jwt = false
